@@ -112,7 +112,7 @@ This system leverages advanced facial recognition capabilities:
    ```bash
    uvicorn main:app --reload
    ```
-   API will be available at: http://127.0.0.1:8000
+Public API: https://presensync-api.onrender.com
 
 ## 🧪 API Endpoints
 
