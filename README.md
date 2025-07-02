@@ -44,18 +44,32 @@ This system leverages advanced facial recognition capabilities:
 
 ## 🛠 Technologies Used
 
-| Technology | Purpose |
-|------------|---------|
-| **FastAPI** | Backend web framework |
-| **MongoDB** | NoSQL database (Atlas recommended) |
-| **Motor** | Async MongoDB driver |
-| **face_recognition** | Face encoding & comparison |
-| **ResNet-34** | Face detection model |
-| **bcrypt** | Password hashing |
-| **JWT (PyJWT)** | Token-based authentication |
-| **Pydantic** | Data validation |
-| **Uvicorn** | ASGI server |
-| **dotenv** | Environment configuration |
+| Technology             | Purpose                                                                  |
+| ---------------------- | ------------------------------------------------------------------------ |
+| **FastAPI**            | Backend web framework for building high-performance RESTful APIs         |
+| **MongoDB (Atlas)**    | NoSQL database for storing users, attendance logs, and encodings         |
+| **Motor**              | Asynchronous MongoDB driver for FastAPI integration                      |
+| **face\_recognition**  | Facial encoding, comparison, and detection powered by dlib and ResNet-34 |
+| **dlib**               | Core machine learning library used for facial feature extraction         |
+| **ResNet-34**          | Deep CNN model used to compute 128-d face encodings                      |
+| **OpenCV (cv2)**       | Webcam access and image preprocessing during face capture                |
+| **Pillow (PIL)**       | Image processing (for uploaded images)                                   |
+| **NumPy**              | Numerical computing used for encoding comparisons                        |
+| **PyJWT**              | JSON Web Token creation and decoding for secure login sessions           |
+| **bcrypt**             | Secure password hashing for email/password authentication                |
+| **Pydantic**           | Data validation for request bodies and responses                         |
+| **Uvicorn**            | ASGI server to serve the FastAPI application                             |
+| **email-validator**    | Ensures email format is valid before account creation                    |
+| **python-dotenv**      | Manages environment variables from `.env` file                           |
+| **python-multipart**   | Enables file/image uploads via `multipart/form-data`                     |
+| **requests**           | Used in local testing scripts to send API requests                       |
+| **certifi**            | CA bundle for SSL certificate validation                                 |
+| **idna**               | Internationalized domain name handling for URLs                          |
+| **urllib3**            | Reliable HTTP client for Python (used internally by requests)            |
+| **charset-normalizer** | Handles string encoding normalization in HTTP responses                  |
+| **setuptools**         | Python packaging and installation utility                                |
+| **typing-extensions**  | Compatibility for newer typing features in older Python versions         |
+
 
 ## 📁 Project Structure
 
