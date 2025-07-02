@@ -181,13 +181,14 @@ Make code changes
 
 Run:
 
-bash
-Copy
-Edit
+```bash
+
 git add .
 git commit -m "Update feature"
 git push
-GitHub Actions:
+
+```
+***GitHub Actions:***
 
 Builds the Docker image
 
