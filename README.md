@@ -144,59 +144,73 @@ This backend is designed to work seamlessly with the Grafix dashboard UI that vi
 face_recognition.compare_faces([stored_encoding], new_encoding, tolerance=0.6)
 ```
 
-## ✅ Future Improvements
 
-- Add comprehensive test suite
-- Implement logging and exception handling middleware
-- Connect with production-grade Grafix frontend
-- Enhance security with rate limiting and additional authentication factors
 
----
+## 🚀 Deployment & DevOps
+This project is production-ready with a complete DevOps pipeline:
 
-🚀 Deployment & DevOps
-This backend now includes a fully automated CI/CD pipeline using GitHub Actions, Docker, and Render:
+### 🔁 CI/CD (GitHub Actions)
+Trigger: On every push to master
 
-🔁 CI/CD Workflow
-Every push to master:
+Steps:
 
-Builds a Docker image using GitHub Actions
+Build Docker image
 
-Pushes to DockerHub: akanine2602/attendance-api
+Push to DockerHub (akanine2602/attendance-api)
 
-Triggers automatic deployment to Render via Deploy Hook
+Trigger deployment on Render via webhook
 
-🐳 Dockerized Architecture
-All services are containerized with a single Dockerfile
+### 🐳 Dockerized Infrastructure
+Full support via Dockerfile
 
-Environment variables are managed securely via .env and Render Dashboard
+Local development or containerized deployment
 
-Face recognition dependencies like dlib and face_recognition are prebuilt to optimize deployment time and avoid build memory issues
+Image is memory-optimized to avoid build failures
 
-🌐 Live API
-Hosted on Render
+### ☁️ Live Deployment (Render)
+Hosted on: Render
 
-Public endpoint: https://presensync-api.onrender.com
+Public API: https://presensync-api.onrender.com
 
-🛠 DevOps Tools Used
-Tool	Purpose
-Docker	Containerization of FastAPI backend
-DockerHub	Hosting prebuilt image
-GitHub Actions	CI/CD pipeline to automate Docker builds and deploys
-Render	Cloud hosting with deploy hook support
-Uvicorn	ASGI server within Docker container
+Build strategy: Prebuilt Docker image (no source compile on server)
 
-✅ Developer Workflow
-Push changes to master
+Trigger: Render deploy hook called by GitHub Action
 
-GitHub Actions automatically:
+### ✅ Developer Workflow
+Make code changes
 
-Builds Docker image
+Run:
+
+bash
+Copy
+Edit
+git add .
+git commit -m "Update feature"
+git push
+GitHub Actions:
+
+Builds the Docker image
 
 Pushes to DockerHub
 
-Notifies Render to redeploy
+Notifies Render → new live deploy
 
-Live API is updated instantly
+### 📈 Future Improvements
+Add test coverage with pytest
 
+Connect with full Grafix frontend
 
+Add HR tools like leave approvals and shift planning
 
+Implement admin-level analytics and controls
+
+Integrate email notifications (absences, daily logs)
+
+Add ML-based fraud detection (duplicate face, spoofing)
+
+### 💬 Contact
+For queries, feedback, or contributions:
+
+Author: Aka-Nine
+
+Email: Nine.digitalServices@gmail.com
