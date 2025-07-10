@@ -32,5 +32,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files
 COPY . .
 
-# Run the API
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+# Run the API (use dynamic port from Render or your platform)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
