@@ -32,7 +32,7 @@ app = FastAPI(
 # ✅ CORS Configuration
 origins = [
     "http://localhost:3000",  # Local development
-    "https://attendance-system-frontend-rho.vercel.app"  # Vercel deployed frontend
+    "https://attendance-system-frontend-pmdb944to-nine-projects.vercel.app"  # Vercel deployed frontend
 ]
 
 app.add_middleware(
