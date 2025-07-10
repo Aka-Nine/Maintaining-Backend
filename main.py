@@ -29,9 +29,10 @@ app = FastAPI(
     description="API for managing employee attendance with face recognition and password-based login."
 )
 
-# CORS
+# ✅ CORS Configuration
 origins = [
-    "http://localhost:3000",
+    "http://localhost:3000",  # Local development
+    "https://attendance-system-frontend-rho.vercel.app"  # Vercel deployed frontend
 ]
 
 app.add_middleware(
@@ -42,23 +43,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health check
+# ✅ Health check
 @app.get("/")
 async def root():
     return {"message": "Welcome to the Attendance Management System API 🚀"}
 
-# Authentication Routes
+# ✅ Authentication Routes
 app.post("/login/password")(login_with_password)
 app.post("/login/face")(login_with_face)
 app.post("/login/face/employer")(login_employer_with_face)
 app.post("/login/face/employee")(login_employee_with_face)
 
-# Feature Routers
+# ✅ Feature Routers
 app.include_router(employer_router, prefix="/employer", tags=["Employer"])
 app.include_router(employee_router, prefix="/employee", tags=["Employee"])
 app.include_router(attendance_router, prefix="/attendance", tags=["Attendance"])
 
-# Startup Events
+# ✅ Startup Events
 @app.on_event("startup")
 async def startup_db():
     try:
@@ -67,5 +68,6 @@ async def startup_db():
     except Exception as e:
         print(f"❌ Error creating indexes: {e}")
 
+# ✅ Local run
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
